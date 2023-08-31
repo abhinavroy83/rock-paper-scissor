@@ -125,3 +125,13 @@ body {
   margin: auto auto;
   gap: 4em;
 }
+
+/* for hurry page  */
+
+.next{
+  display: none;
+}
+
+.next.show{
+  display: flex;
+}

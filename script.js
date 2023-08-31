@@ -7,12 +7,28 @@ const comp_score = document.querySelector(".compt_score_num");
 const your_score = document.querySelector(".your_score_num");
 const winnerMessage = document.querySelector(".winner_msg");
 const playAgain = document.querySelector(".play_again");
-const against_pc=document.querySelector('.against_pc')
+const against_pc = document.querySelector(".against_pc");
+const next_Button = document.querySelector(".next");
 
 let winnerText = "";
 let score_for_user = 0;
-let scoreFor_com=0;
+let scoreFor_com = 0;
+// localStorage
 
+// Storing the user's score in local storage
+const userScore = localStorage.getItem("userScore");
+const computerScore = localStorage.getItem("computerScore");
+
+if (userScore !== null && computerScore !== null) {
+  score_for_user = parseInt(userScore, 10);
+  scoreFor_com = parseInt(computerScore, 10);
+  your_score.innerHTML = score_for_user;
+  comp_score.innerHTML = scoreFor_com;
+} else {
+  // Initial values for local storage
+  localStorage.setItem("userScore", score_for_user);
+  localStorage.setItem("computerScore", scoreFor_com);
+}
 console.log("check");
 let random = ["paper", "scissor", "rock"];
 let userChoice;
@@ -44,8 +60,7 @@ function checkWinner() {
     renderResult();
     winnerText += "TIE UP";
     winnerMessage.innerHTML = winnerText;
-    against_pc.innerHTML=''
-    
+    against_pc.innerHTML = "";
   } else if (
     (userChoice === "rock" && computerinput === "scissor") ||
     (userChoice === "paper" && computerinput === "rock") ||
@@ -56,15 +71,18 @@ function checkWinner() {
     update_user_score(+1);
     winnerText += "YOU WIN";
     winnerMessage.innerHTML = winnerText;
-    against_pc.innerHTML='againshht_pc'
+    against_pc.innerHTML = "againshht_pc";
+    nextButton();
   } else {
     console.log("computerwin");
     renderResult();
     updatecomputerscore(+1);
     winnerText += "YOU LOST";
     winnerMessage.innerHTML = winnerText;
-    against_pc.innerHTML='against_pc'
+    against_pc.innerHTML = "against_pc";
   }
+  localStorage.setItem("userScore", score_for_user);
+  localStorage.setItem("computerScore", scoreFor_com);
 }
 function renderResult() {
   input_container.classList.toggle("remove");
@@ -89,6 +107,7 @@ function updateimg(select, choice) {
 playAgain.addEventListener("click", function () {
   input_container.classList.remove("remove");
   display_container.classList.remove("show");
+  next_Button.classList.remove("show");
 });
 
 function updatecomputerscore(value) {
@@ -99,4 +118,8 @@ function updatecomputerscore(value) {
 function update_user_score(value) {
   score_for_user += value;
   your_score.innerHTML = score_for_user;
+}
+
+function nextButton() {
+  next_Button.classList.toggle("show");
 }
