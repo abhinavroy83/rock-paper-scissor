@@ -9,6 +9,9 @@ const winnerMessage = document.querySelector(".winner_msg");
 const playAgain = document.querySelector(".play_again");
 const against_pc = document.querySelector(".against_pc");
 const next_Button = document.querySelector(".next");
+const ruleBtn = document.querySelector(".rules_btn");
+const rules = document.querySelector(".rules_container");
+const popup_close = document.querySelector(".popup_close");
 
 let winnerText = "";
 let score_for_user = 0;
@@ -29,6 +32,9 @@ if (userScore !== null && computerScore !== null) {
   localStorage.setItem("userScore", score_for_user);
   localStorage.setItem("computerScore", scoreFor_com);
 }
+
+// localStorage.clear();
+
 console.log("check");
 let random = ["paper", "scissor", "rock"];
 let userChoice;
@@ -123,3 +129,12 @@ function update_user_score(value) {
 function nextButton() {
   next_Button.classList.toggle("show");
 }
+
+ruleBtn.addEventListener("click", function () {
+  // console.log("che");
+  rules.classList.toggle("show");
+});
+
+popup_close.addEventListener("click", function () {
+  rules.classList.remove("show");
+});

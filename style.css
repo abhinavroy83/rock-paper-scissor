@@ -4,10 +4,12 @@ body {
 
 .main {
   display: flex;
+  width: 100wh;
+  height: 100vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  /* gap: 10px; */
 }
 
 .result_section {
@@ -24,7 +26,7 @@ body {
   width: 235px;
   margin-top: 0;
 }
-/* .game_tile p {
+.game_tile p {
   border: 2px solid red;
   color: #fff;
   font-family: Roboto;
@@ -33,7 +35,7 @@ body {
   font-weight: 600;
   line-height: normal;
   letter-spacing: 4px;
-} */
+}
 
 .score_board {
   display: flex;
@@ -60,7 +62,7 @@ body {
   justify-content: center;
   width: 90%;
   margin: auto auto;
-  /* background-image: url(https://luuiskame.github.io/rock-paper-scissors-game/rock-paper-scissors-master/images/bg-triangle.svg); */
+  /* background-image: url(); */
   background-repeat: no-repeat;
   background-size: 200px;
   background-position: center center;
@@ -128,10 +130,61 @@ body {
 
 /* for hurry page  */
 
-.next{
+.next {
   display: none;
 }
 
-.next.show{
+.next.show {
   display: flex;
+}
+
+.rules_container {
+  display: none;
+}
+
+.rules_container.show {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 278px;
+  height: 325px;
+  flex-shrink: 0;
+  border-radius: 13px;
+  border: 7px solid #fff;
+  background: #004429;
+  text-align: center;
+}
+
+.rules_container_p {
+  align-content: center;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 29px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.rules_container_details {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: justify;
+}
+
+.popup_close {
+  position: absolute;
+  top: -35px;
+  right: -35px;
+  width: 60px;
+  height: 60px;
+  background-color: #f00;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  stroke-width: 5px;
+  text-align: center;
+  /* stroke: #fff; */
 }

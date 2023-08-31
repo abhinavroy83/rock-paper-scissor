@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="main">
@@ -59,8 +65,29 @@
         </div>
       </div>
     </div>
+
+    <div class="rules_container">
+      <button class="popup_close">X</button>
+      <div>
+        <p class="rules_container_p">Game Rules</p>
+        <ul style="list-style-type: square" class="rules_container_details">
+          <li>
+            Rock beats scissors, scissors beat paper, and paper beats rock.
+          </li>
+          <li>
+            Agree ahead of time whether you’ll count off “rock, paper, scissors,
+            shoot” or just “rock, paper, scissors.”
+          </li>
+          <li>
+            Use rock, paper, scissors to settle minor decisions or simply play
+            to pass the time
+          </li>
+        </ul>
+      </div>
+    </div>
     <div>
       <button class="next">next</button>
+      <button class="rules_btn">RULES</button>
     </div>
     <script type="module" src="script.js"></script>
   </body>
