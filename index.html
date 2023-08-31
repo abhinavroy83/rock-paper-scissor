@@ -11,17 +11,15 @@
       <div class="result_section">
         <div class="game_tile">
           <p>ROCK PAPER SCISSORS</p>
-          <!-- <p>PAPER</p>
-                <p>SCISSORS</p> -->
         </div>
         <div class="score_board">
           <div class="compt_score">
             <p>COMPUTER SCORE</p>
-            <p>0</p>
+            <p class="compt_score_num"></p>
           </div>
           <div class="your_score">
             <p>COMPUTER SCORE</p>
-            <p>0</p>
+            <p class="your_score_num"></p>
           </div>
         </div>
       </div>
@@ -29,7 +27,6 @@
         <div class="rock button" data-choice="rock" value="1">
           <img src="assests/rock.png" alt="paper" />
         </div>
-        <!-- <img src="assest/Line 1.png" alt="" /> -->
 
         <div class="scissor button" data-choice="scissor">
           <img src="assests/scissor.png" alt="scissors" />
@@ -40,13 +37,19 @@
         </div>
       </div>
 
-    <!-- //after update -->
-    
+      <!-- //after update -->
+
       <div class="display_container">
         <div class="user_select_container">
           <div class="user_select">
-            <img src="" alt="">
-            
+            <img src="" alt="" />
+          </div>
+        </div>
+        <div>
+          <div>
+            <p class="winner_msg"></p>
+            <p class="against_pc"></p>
+            <button class="play_again">Play again</button>
           </div>
         </div>
         <div class="machine_select_container">

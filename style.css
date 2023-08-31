@@ -66,6 +66,10 @@ body {
   background-position: center center;
   column-gap: 3em;
 }
+
+.input-container.remove {
+  display: none;
+}
 .rock {
   padding: 25px 25px 15px 25px;
   margin-bottom: 2em;
@@ -91,7 +95,7 @@ body {
   grid-area: b;
   cursor: pointer;
 }
-.scissors img{
+.scissors img {
   width: 55px;
 }
 
@@ -106,10 +110,18 @@ body {
   cursor: pointer;
   margin-bottom: 2em;
 }
-.paper img{
-    width: 55px;
+.paper img {
+  width: 55px;
 }
 
-.display_container{
-  display: flex;;
+.display_container {
+  display: none;
+}
+
+.display_container.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto auto;
+  gap: 4em;
 }

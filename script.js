@@ -1,8 +1,17 @@
 const input_container = document.querySelector(".input-container");
-const display_container=document.querySelector(".display_container")
+const display_container = document.querySelector(".display_container");
 const btn = document.querySelectorAll(".button");
 const user_select = document.querySelector(".user_select");
 const machine_select = document.querySelector(".machine_select");
+const comp_score = document.querySelector(".compt_score_num");
+const your_score = document.querySelector(".your_score_num");
+const winnerMessage = document.querySelector(".winner_msg");
+const playAgain = document.querySelector(".play_again");
+const against_pc=document.querySelector('.against_pc')
+
+let winnerText = "";
+let score_for_user = 0;
+let scoreFor_com=0;
 
 console.log("check");
 let random = ["paper", "scissor", "rock"];
@@ -30,27 +39,40 @@ function checkWinner() {
   updateimg(machine_select, computerinput);
   // input_container.remove()
 
-
   if (userChoice === computerinput) {
     console.log("tie");
-    renderResult()
+    renderResult();
+    winnerText += "TIE UP";
+    winnerMessage.innerHTML = winnerText;
+    against_pc.innerHTML=''
+    
   } else if (
     (userChoice === "rock" && computerinput === "scissor") ||
     (userChoice === "paper" && computerinput === "rock") ||
     (userChoice === "scissor" && computerinput === "paper")
   ) {
     console.log("youwin");
-    renderResult()
+    renderResult();
+    update_user_score(+1);
+    winnerText += "YOU WIN";
+    winnerMessage.innerHTML = winnerText;
+    against_pc.innerHTML='againshht_pc'
   } else {
     console.log("computerwin");
-    renderResult()
+    renderResult();
+    updatecomputerscore(+1);
+    winnerText += "YOU LOST";
+    winnerMessage.innerHTML = winnerText;
+    against_pc.innerHTML='against_pc'
   }
 }
-function renderResult(){
-  input_container.classList.toggle("remove")
-  display_container.classList.toggle("show")
+function renderResult() {
+  input_container.classList.toggle("remove");
+  display_container.classList.toggle("show");
+  // console.log(`input_container classList: ${input_container.classList}`);
+  // console.log(`display_container classList: ${display_container.classList}`);
   // playAgain.classList.toggle("show")
-  // winnerMessage  = ""
+  winnerText = "";
 }
 
 function updateimg(select, choice) {
@@ -62,4 +84,19 @@ function updateimg(select, choice) {
   select.classList.add(choice);
   img.src = `./assests/${choice}.png`;
   img.alt = choice;
+}
+
+playAgain.addEventListener("click", function () {
+  input_container.classList.remove("remove");
+  display_container.classList.remove("show");
+});
+
+function updatecomputerscore(value) {
+  scoreFor_com += value;
+  comp_score.innerHTML = scoreFor_com;
+}
+
+function update_user_score(value) {
+  score_for_user += value;
+  your_score.innerHTML = score_for_user;
 }
