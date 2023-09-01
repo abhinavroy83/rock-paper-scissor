@@ -78,7 +78,7 @@ function checkWinner() {
     update_user_score(+1);
     winnerText += "YOU WIN";
     winnerMessage.innerHTML = winnerText;
-    against_pc.innerHTML = "againshht_pc";
+    against_pc.innerHTML = "AGAINST PC";
     nextButton();
   } else {
     console.log("computerwin");
@@ -86,7 +86,7 @@ function checkWinner() {
     updatecomputerscore(+1);
     winnerText += "YOU LOST";
     winnerMessage.innerHTML = winnerText;
-    against_pc.innerHTML = "against_pc";
+    against_pc.innerHTML = "AGAINST PC";
   }
   localStorage.setItem("userScore", score_for_user);
   localStorage.setItem("computerScore", scoreFor_com);
@@ -139,16 +139,21 @@ ruleBtn.addEventListener("click", function () {
 popup_close.addEventListener("click", function () {
   rules.classList.remove("show");
 });
-const main=document.querySelector('.main');
-const hurrymsg=document.querySelector('.hurrymsg');
+const main = document.querySelector(".main");
+const hurrymsg = document.querySelector(".hurry_page");
+const playAgainn = document.querySelector(".playAgain");
 
-nextbtn.addEventListener('click',function(){
-  console.log("he");
+nextbtn.addEventListener("click", function () {
+  // console.log("he");
   main.classList.toggle("hide");
   hurrymsg.classList.toggle("show");
-})
+  next_Button.classList.remove("show");
+});
 // playAgainHurry
-hurrymsg.addEventListener('click',function(){
+playAgainn.addEventListener("click", function () {
   main.classList.remove("hide");
   hurrymsg.classList.remove("show");
-})
+  input_container.classList.remove("remove");
+  display_container.classList.remove("show");
+  next_Button.classList.remove("show");
+});
