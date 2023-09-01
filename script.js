@@ -80,6 +80,7 @@ function checkWinner() {
     winnerMessage.innerHTML = winnerText;
     against_pc.innerHTML = "AGAINST PC";
     nextButton();
+    userChoice.classList.add("green_effect");
   } else {
     console.log("computerwin");
     renderResult();
@@ -137,7 +138,7 @@ ruleBtn.addEventListener("click", function () {
 });
 
 popup_close.addEventListener("click", function () {
-  rules.classList.remove("show");
+  rules.classList.toggle("show");
 });
 const main = document.querySelector(".main");
 const hurrymsg = document.querySelector(".hurry_page");

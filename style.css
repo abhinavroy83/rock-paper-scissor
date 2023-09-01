@@ -47,7 +47,7 @@ main {
   border-radius: 9px;
   background: #fff;
 }
-#spcace{
+#spcace {
   padding: 5px 20px 5px 20px;
 }
 .user_comp_score p {
@@ -191,7 +191,7 @@ main {
   letter-spacing: 1.5px;
 }
 
-.rules.show {
+.rules {
   font-family: "Roboto", sans-serif;
   width: 260px;
   position: absolute;
@@ -207,11 +207,45 @@ main {
   border-radius: 7px;
 }
 
-.rules {
+.green_effect{
+  display: none;
+}
+.green_effect.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.ellipse8 {
+  position: relative;
+}
+
+.ellipse7 {
+  position: absolute;
+  background-image: url("assests/Ellipse7.png");
+  background-repeat: no-repeat;
+  background-size: cover; 
+  width: 150px; 
+  height: 150px; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ellipse8 {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-color: rgba(46, 154, 37, 0.39);
+}
+
+.rules.show {
   display: none;
 }
 
 .rules_container_p {
+  text-align: center;
   align-content: center;
   color: #fff;
   font-family: Roboto;
@@ -228,6 +262,9 @@ main {
   flex-direction: column;
   gap: 15px;
   list-style-type: square;
+}
+.rules_container_details li::marker {
+  color: #ffd600;
 }
 
 .popup_close {
