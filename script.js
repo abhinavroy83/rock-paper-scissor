@@ -10,8 +10,9 @@ const playAgain = document.querySelector(".play_again");
 const against_pc = document.querySelector(".against_pc");
 const next_Button = document.querySelector(".next");
 const ruleBtn = document.querySelector(".rules_btn");
-const rules = document.querySelector(".rules_container");
+const rules = document.querySelector(".rules");
 const popup_close = document.querySelector(".popup_close");
+const nextbtn = document.querySelector(".next");
 
 let winnerText = "";
 let score_for_user = 0;
@@ -138,3 +139,16 @@ ruleBtn.addEventListener("click", function () {
 popup_close.addEventListener("click", function () {
   rules.classList.remove("show");
 });
+const main=document.querySelector('.main');
+const hurrymsg=document.querySelector('.hurrymsg');
+
+nextbtn.addEventListener('click',function(){
+  console.log("he");
+  main.classList.toggle("hide");
+  hurrymsg.classList.toggle("show");
+})
+// playAgainHurry
+hurrymsg.addEventListener('click',function(){
+  main.classList.remove("hide");
+  hurrymsg.classList.remove("show");
+})
