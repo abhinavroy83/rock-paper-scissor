@@ -47,6 +47,9 @@ main {
   border-radius: 9px;
   background: #fff;
 }
+#spcace{
+  padding: 5px 20px 5px 20px;
+}
 .user_comp_score p {
   margin: 0.2em;
   text-align: center;
@@ -132,7 +135,19 @@ main {
   gap: 4em;
 }
 
-.Show_msg{
+.picked {
+  margin: 10px;
+  text-align: center;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.7px;
+}
+
+.Show_msg {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -140,7 +155,6 @@ main {
 }
 
 .winner_msg {
- 
   color: #fff;
   text-align: center;
   font-family: Roboto;
