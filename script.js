@@ -80,7 +80,7 @@ function checkWinner() {
     winnerMessage.innerHTML = winnerText;
     against_pc.innerHTML = "AGAINST PC";
     nextButton();
-    userChoice.classList.add("green_effect");
+    // userChoice.classList.add("green_effect");
   } else {
     console.log("computerwin");
     renderResult();

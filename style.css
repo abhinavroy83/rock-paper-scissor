@@ -349,7 +349,7 @@ main {
   width: 100vh;
   height: 400px;
 
-  background-image: url("star.png");
+  background-image: url("assests/star.png");
   background-repeat: no-repeat;
   background-position: center;
   margin: 0;
