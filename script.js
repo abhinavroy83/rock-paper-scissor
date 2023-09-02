@@ -13,6 +13,8 @@ const ruleBtn = document.querySelector(".rules_btn");
 const rules = document.querySelector(".rules");
 const popup_close = document.querySelector(".popup_close");
 const nextbtn = document.querySelector(".next");
+const user_green = document.querySelector(".user_green");
+const pc_green = document.querySelector(".pc_green");
 
 let winnerText = "";
 let score_for_user = 0;
@@ -80,7 +82,8 @@ function checkWinner() {
     winnerMessage.innerHTML = winnerText;
     against_pc.innerHTML = "AGAINST PC";
     nextButton();
-    // userChoice.classList.add("green_effect");
+    backgroundImage(user_green);
+  
   } else {
     console.log("computerwin");
     renderResult();
@@ -88,16 +91,30 @@ function checkWinner() {
     winnerText += "YOU LOST";
     winnerMessage.innerHTML = winnerText;
     against_pc.innerHTML = "AGAINST PC";
+    backgroundImage(pc_green);
   }
   localStorage.setItem("userScore", score_for_user);
   localStorage.setItem("computerScore", scoreFor_com);
 }
+
+function backgroundImage(image) {
+  
+  image.classList.add('background-image-style');
+}
+function clearBackgroundImage(image) {
+  image.classList.remove('background-image-style');
+  
+}
+playAgain.addEventListener("click", function () {
+  input_container.classList.remove("remove");
+  display_container.classList.remove("show");
+  next_Button.classList.remove("show");
+  clearBackgroundImage(user_green);
+  clearBackgroundImage(pc_green);
+});
 function renderResult() {
   input_container.classList.toggle("remove");
   display_container.classList.toggle("show");
-  // console.log(`input_container classList: ${input_container.classList}`);
-  // console.log(`display_container classList: ${display_container.classList}`);
-  // playAgain.classList.toggle("show")
   winnerText = "";
 }
 
@@ -112,11 +129,6 @@ function updateimg(select, choice) {
   img.alt = choice;
 }
 
-playAgain.addEventListener("click", function () {
-  input_container.classList.remove("remove");
-  display_container.classList.remove("show");
-  next_Button.classList.remove("show");
-});
 
 function updatecomputerscore(value) {
   scoreFor_com += value;
